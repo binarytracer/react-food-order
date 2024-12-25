@@ -1,0 +1,22 @@
+[
+  {
+    "items": [
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "qty": 1
+      }
+    ],
+    "customer": {
+      "name": "Rod",
+      "email": "rod@test.com",
+      "street": "adasd",
+      "postal-code": "1211",
+      "city": "Mandaue City"
+    },
+    "id": "571.0362426267876"
+  }
+]
