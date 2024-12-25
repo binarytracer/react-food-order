@@ -4,10 +4,15 @@ const CartContext = createContext({
   items: [],
   addItem: (item) => {},
   removeItem: (id) => {},
+  clearCart: () => {},
 });
 
 function cartReducer(state, action) {
   const { items } = state;
+
+  if (action.type === "CLEAR_CART") {
+    return { ...state, items: [] };
+  }
 
   if (action.type === "ADD_ITEM") {
     const existingItemIndex = state.items.findIndex(
@@ -66,10 +71,15 @@ export function CartContextProvider(props) {
     dispatchCartAction({ type: "REMOVE_ITEM", id });
   }
 
+  function clearCartHandler() {
+    dispatchCartAction({ type: "CLEAR_CART" });
+  }
+
   const context = {
     items: cart.items,
     addItem: addItemHandler,
     removeItem: removeItemHandler,
+    clearCart: clearCartHandler,
   };
 
   return (
